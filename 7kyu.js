@@ -38,3 +38,49 @@ function getMiddle(s) {
 // console.log(getMiddle("Orange"));
 
 // ------------------------------------------------------
+
+// Easy wallpaper
+
+numbers = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+  "fourteen",
+  "fifteen",
+  "sixteen",
+  "seventeen",
+  "eighteen",
+  "nineteen",
+  "twenty",
+];
+
+function wallpaper(l, w, h) {
+  if (l === 0 || w === 0 || h === 0) {
+    return "zero";
+  } else {
+    let roll = 0.52 * 10;
+    let room = (l * 2 + w * 2) * h;
+    let NrOfRollsNeeded = room / roll;
+    let length = NrOfRollsNeeded * 10;
+    let lengthIncExtra = (length / 100) * 115;
+    let rollsNeeded = lengthIncExtra / 10;
+    let rounded = Math.ceil(rollsNeeded);
+    let word = numbers[rounded];
+    return word;
+  }
+}
+
+// console.log(wallpaper(0.0, 3.5, 3.0));
+
+// --------------------------------------------
