@@ -21,3 +21,20 @@ function spongeMeme(sentence) {
 // console.log(spongeMeme("stop Making spongebob Memes!"));
 
 //-------------------------------------------------------
+
+// Get the Middle Character
+
+function getMiddle(s) {
+  const length = s.length;
+  if (length % 2 !== 0) {
+    let index = Math.floor(length / 2);
+    return s.charAt(index);
+  } else if (length % 2 === 0) {
+    let index = Math.floor(length / 2);
+    return s.slice(index - 1, index + 1);
+  }
+}
+
+// console.log(getMiddle("Orange"));
+
+// ------------------------------------------------------
