@@ -12,6 +12,14 @@ function mergeArrays(arr1, arr2) {
   return sortedArr;
 }
 
-console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
+//console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
 
 // ------------------------------------------------------------
+
+// Fixme - Replace all dots
+
+var replaceDots = function (str) {
+  return (resultingString = str.split(".").join("-"));
+};
+
+//console.log(replaceDots("one.two.three"));
