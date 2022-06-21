@@ -97,3 +97,19 @@ function highAndLow(numbers) {
 }
 
 //console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+// --------------------------------------------
+
+// Credit Card Mask
+
+function maskify(cc) {
+  if (cc.length <= 4) {
+    return cc;
+  } else {
+    let masked =
+      "#".repeat(cc.length - 4) + cc.substring(cc.length - 4, cc.length);
+    return masked;
+  }
+}
+
+console.log(maskify("orangetree"));
