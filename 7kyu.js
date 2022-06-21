@@ -84,3 +84,16 @@ function wallpaper(l, w, h) {
 // console.log(wallpaper(0.0, 3.5, 3.0));
 
 // --------------------------------------------
+
+// Highest and Lowest
+
+function highAndLow(numbers) {
+  const num = numbers.split(" ").map((element) => Number(element));
+
+  let highest = Math.max(...num);
+  let lowest = Math.min(...num);
+
+  return highest + " " + lowest;
+}
+
+//console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));

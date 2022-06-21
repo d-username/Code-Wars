@@ -23,6 +23,6 @@ function makeAWindow(num) {
 // |...|...|
 // ---------
 
-// console.log(makeAWindow(3));
+// console.log(makeAWindow(4));
 
 // --------------------------------------------------------------
