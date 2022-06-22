@@ -138,3 +138,25 @@ function descendingOrder(n) {
 // console.log(descendingOrder(121548428));
 
 // ---------------------------------------------------
+
+// Complementary DNA
+
+// "ATTGC" --> "TAACG"
+// "GTAT" --> "CATA"
+
+function DNAStrand(dna) {
+  const split = dna.split("");
+
+  split.forEach((letter, i) => {
+    if (letter === "A") split[i] = "T";
+    if (letter === "T") split[i] = "A";
+    if (letter === "C") split[i] = "G";
+    if (letter === "G") split[i] = "C";
+  });
+
+  return split.join("");
+}
+
+// console.log(DNAStrand("GTAT"));
+
+// -----------------------------------------------
