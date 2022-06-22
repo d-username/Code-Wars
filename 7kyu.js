@@ -112,4 +112,29 @@ function maskify(cc) {
   }
 }
 
-console.log(maskify("orangetree"));
+// console.log(maskify("orangetree"));
+
+// --------------------------------------------------
+
+// Descending Order
+
+function descendingOrder(n) {
+  const numbers = n
+    .toString()
+    .split("")
+    .sort(function (a, b) {
+      return b - a;
+    });
+
+  let newNum = numbers[0];
+
+  for (let i = 1; i < numbers.length; i++) {
+    newNum += numbers[i];
+  }
+
+  return Number(newNum);
+}
+
+// console.log(descendingOrder(121548428));
+
+// ---------------------------------------------------
