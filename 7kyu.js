@@ -170,3 +170,20 @@ function filter_list(l) {
 // console.log(filter_list([1, 2, "aasf", "1", "123", 123]));
 
 // ------------------------------------------------
+
+// Is this a triangle?
+
+function isTriangle(a, b, c) {
+  const longest = Math.max(a, b, c);
+  const total = a + b + c;
+  const shorts = total - longest;
+
+  if (longest >= shorts) {
+    return false;
+  }
+  return true;
+}
+
+// console.log(isTriangle(7, 2, 2));
+
+// -----------------------------------------
