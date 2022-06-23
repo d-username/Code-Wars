@@ -48,3 +48,22 @@ function spinWords(string) {
 // console.log(spinWords("Hey fellow warriors"));
 
 // --------------------------------------------------------
+
+// Multiples of 3 or 5
+
+function solution(number) {
+  let nums = [];
+
+  if (number <= 3) {
+    return 0;
+  } else {
+    for (let i = 1; i < number; i++) {
+      if (i % 3 === 0 || i % 5 === 0) {
+        nums.push(i);
+      }
+    }
+  }
+  return nums.reduce((a, b) => a + b);
+}
+
+// console.log(solution(10));
