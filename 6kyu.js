@@ -67,3 +67,43 @@ function solution(number) {
 }
 
 // console.log(solution(10));
+
+// ---------------------------------------------------
+
+// Length of missing array
+
+// Example:
+// [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+
+function getLengthOfMissingArray(arrayOfArrays) {
+  if (arrayOfArrays === null || arrayOfArrays.length === 0) {
+    return 0;
+  }
+
+  let lengths = [];
+
+  for (let i = 0; i < arrayOfArrays.length; i++) {
+    if (
+      arrayOfArrays[i] === null ||
+      arrayOfArrays[i].length === 0 ||
+      arrayOfArrays[i] === 0
+    ) {
+      return 0;
+    } else {
+      lengths.push(arrayOfArrays[i].length);
+    }
+  }
+  const sortedLengths = lengths.sort(function (a, b) {
+    return a - b;
+  });
+
+  for (let i = 0; i < sortedLengths.length; i++) {
+    if (sortedLengths[i] + 1 !== sortedLengths[i + 1]) {
+      return sortedLengths[i] + 1;
+    }
+  }
+}
+
+// console.log(getLengthOfMissingArray([]));
+
+// ----------------------------------------------------
