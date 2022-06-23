@@ -26,3 +26,25 @@ function makeAWindow(num) {
 // console.log(makeAWindow(4));
 
 // --------------------------------------------------------------
+
+// Stop gninnipS My sdroW!
+
+function spinWords(string) {
+  const words = string.split(" ");
+  solution = [];
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length >= 5) {
+      let reversed = words[i].split("").reverse().join("");
+      solution.push(reversed);
+    }
+    if (words[i].length < 5) {
+      solution.push(words[i]);
+    }
+  }
+  return solution.join(" ");
+}
+
+// console.log(spinWords("Hey fellow warriors"));
+
+// --------------------------------------------------------
