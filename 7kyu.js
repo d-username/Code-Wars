@@ -187,3 +187,24 @@ function isTriangle(a, b, c) {
 // console.log(isTriangle(7, 2, 2));
 
 // -----------------------------------------
+
+// Detect Pangram
+
+// const string1 = "The quick brown fox jumps over the lazy dog.";
+// const string2 = "This is not a pangram.";
+// const string3 = "Cwm fjord bank glyphs vext quiz";
+
+function isPangram(string) {
+  const abc = "abcdefghijklmnopqrstuvwxyz";
+  const lower = string.toLowerCase();
+  const splitString = lower.split("");
+
+  for (let i = 0; i < abc.length; i++) {
+    if (!splitString.includes(abc[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// console.log(isPangram(string3));
