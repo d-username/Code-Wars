@@ -118,7 +118,6 @@ function getLengthOfMissingArray(arrayOfArrays) {
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 
 function likes(names) {
-  console.log(names);
   if (names.length === 0) {
     return "no one likes this";
   }
@@ -139,3 +138,30 @@ function likes(names) {
 // console.log(likes(["Jacob", "Alex", "Max", "David", "Emma"]));
 
 // -----------------------------------------------
+
+// Create Phone Number
+
+// Example:
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+function createPhoneNumber(numbers) {
+  return (
+    "(" +
+    numbers[0] +
+    numbers[1] +
+    numbers[2] +
+    ") " +
+    numbers[3] +
+    numbers[4] +
+    numbers[5] +
+    "-" +
+    numbers[6] +
+    numbers[7] +
+    numbers[8] +
+    numbers[9]
+  );
+}
+
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+// --------------------------------------------
