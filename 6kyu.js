@@ -195,3 +195,47 @@ var uniqueInOrder = function (iterable) {
 // console.log(uniqueInOrder("AAAABBBCCDAABBB"));
 
 // --------------------------------------------
+
+// The Deaf Rats of Hamelin
+
+// Legend
+// P = The Pied Piper
+// O~ = Rat going left
+// ~O = Rat going right
+
+// Example
+// ex1 ~O~O~O~O P has 0 deaf rats
+// ex2 P O~ O~ ~O O~ has 1 deaf rat
+// ex3 ~O~O~O~OP~O~OO~ has 2 deaf rats
+
+var countDeafRats = function (town) {
+  let piper = false;
+  let deaf = 0;
+  let rat = "";
+
+  for (let i = 0; i < town.length; i++) {
+    if (town[i] === "P") {
+      piper = true;
+      rat = "";
+    } else if (town[i] === " ") {
+      rat = "";
+    } else {
+      rat += town[i];
+    }
+
+    if (piper === false && rat === "O~") {
+      deaf++;
+    } else if (piper === true && rat === "~O") {
+      deaf++;
+    }
+
+    if (rat.length === 2) {
+      rat = "";
+    }
+  }
+  return deaf;
+};
+
+// console.log(countDeafRats("PO~O~~O  O~  O~O~O~O~O~~OO~O~"));
+
+// --------------------------------
