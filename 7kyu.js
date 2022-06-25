@@ -208,3 +208,32 @@ function isPangram(string) {
 }
 
 // console.log(isPangram(string3));
+
+// --------------------------------
+
+// Beginner Series #3 Sum of Numbers
+
+// Examples
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+function getSum(a, b) {
+  const small = Math.min(a, b);
+  const big = Math.max(a, b);
+  let nums = null;
+
+  if (a === b) {
+    return a;
+  } else {
+    for (let i = small; i <= big; i++) {
+      nums += i;
+    }
+    return nums;
+  }
+}
+
+console.log(getSum(-1, 2));
