@@ -239,3 +239,40 @@ var countDeafRats = function (town) {
 // console.log(countDeafRats("PO~O~~O  O~  O~O~O~O~O~~OO~O~"));
 
 // --------------------------------
+
+// Dead Ants
+
+// The ants on walk look like this:
+// ..ant..ant.ant...ant.ant..ant.ant....ant..ant.ant.ant...ant..
+
+// Damaged ands look like this:
+// ...ant...ant..nat.ant.t..ant...ant..ant..ant.anant..t
+
+deadAntCount = function (ants) {
+  if (!ants) {
+    return 0;
+  }
+
+  let antParts = ants.replace(/ant/g, "");
+  let letters = antParts.split("");
+
+  let a = 0;
+  let n = 0;
+  let t = 0;
+
+  letters.forEach((element) => {
+    if (element === "a") {
+      a++;
+    }
+    if (element === "n") {
+      n++;
+    }
+    if (element === "t") {
+      t++;
+    }
+  });
+
+  return Math.max(a, n, t);
+};
+
+console.log(deadAntCount("ant ant .... a nt"));
