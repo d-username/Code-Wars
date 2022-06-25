@@ -165,3 +165,33 @@ function createPhoneNumber(numbers) {
 // console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 // --------------------------------------------
+
+// Unique In Order
+
+// Example:
+// uniqueInOrder("AAAABBBCCDAABBB") == ["A", "B", "C", "D", "A", "B"];
+// uniqueInOrder("ABBCcAD") == ["A", "B", "C", "c", "A", "D"];
+// uniqueInOrder([1, 2, 2, 3, 3]) == [1, 2, 3];
+
+var uniqueInOrder = function (iterable) {
+  let unique = [];
+  if (typeof iterable === "string") {
+    let split = iterable.split("");
+    for (let i = 0; i < split.length; i++) {
+      if (split[i] !== split[i + 1]) {
+        unique.push(split[i]);
+      }
+    }
+  } else {
+    for (let i = 0; i < iterable.length; i++) {
+      if (iterable[i] !== iterable[i + 1]) {
+        unique.push(iterable[i]);
+      }
+    }
+  }
+  return unique;
+};
+
+// console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+
+// --------------------------------------------
