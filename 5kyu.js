@@ -83,3 +83,40 @@ function rgb(r, g, b) {
 // console.log(rgb(26, 250, 175));
 
 // ------------------------------------
+
+// Human Readable Time
+
+function humanReadable(seconds) {
+  let time = {
+    HH: 0,
+    MM: 0,
+    SS: 0,
+  };
+
+  while (seconds >= 3600) {
+    seconds = seconds - 3600;
+    time.HH++;
+  }
+
+  while (seconds >= 60) {
+    seconds = seconds - 60;
+    time.MM++;
+  }
+
+  while (seconds > 0) {
+    seconds = seconds - 1;
+    time.SS++;
+  }
+
+  return (
+    time.HH.toString().padStart(2, "0") +
+    ":" +
+    time.MM.toString().padStart(2, "0") +
+    ":" +
+    time.SS.toString().padStart(2, "0")
+  );
+}
+
+// console.log(humanReadable(59));
+
+// --------------------------------------
