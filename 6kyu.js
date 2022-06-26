@@ -275,4 +275,38 @@ deadAntCount = function (ants) {
   return Math.max(a, n, t);
 };
 
-console.log(deadAntCount("ant ant .... a nt"));
+// console.log(deadAntCount("ant ant .... a nt"));
+
+// ---------------------------------------------
+
+// Single Word Pig Latin
+
+function pigLatin(string) {
+  const vowels = "aeiou";
+  const abc = "abcdefghijklmnopqrstuvwxyz";
+
+  for (let i = 0; i < string.length; i++) {
+    if (!abc.includes(string[i].toLowerCase())) {
+      return null;
+    }
+  }
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[0].toLowerCase())) {
+      return string.toLowerCase() + "way";
+    }
+  }
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i].toLowerCase())) {
+      return (
+        string.substring(i).toLowerCase() +
+        string.substring(0, i).toLowerCase() +
+        "ay"
+      );
+    }
+  }
+  return string.toLowerCase() + "ay";
+}
+
+// console.log(pigLatin("Spaghetti"));
+
+// -----------------------------------
