@@ -120,3 +120,40 @@ function humanReadable(seconds) {
 // console.log(humanReadable(59));
 
 // --------------------------------------
+
+// Valid Parentheses
+
+// Examples:
+// "()"              =>  true
+// ")(()))"          =>  false
+// "("               =>  false
+// "(())((()())())"  =>  true
+
+function validParentheses(parens) {
+  if (!parens) {
+    return true;
+  }
+
+  let opening = 0;
+  let closing = 0;
+
+  for (let i = 0; i < parens.length; i++) {
+    if (parens[i] === "(") {
+      opening++;
+    }
+    if (parens[i] === ")") {
+      closing++;
+      if (closing > opening) {
+        return false;
+      }
+    }
+  }
+
+  if (opening > closing) {
+    return false;
+  }
+
+  return true;
+}
+
+// console.log(validParentheses("(())((()())())"));
