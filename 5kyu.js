@@ -157,3 +157,39 @@ function validParentheses(parens) {
 }
 
 // console.log(validParentheses("(())((()())())"));
+
+// ----------------------------------------
+
+// The Hashtag Generator
+
+// Examples:
+// " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+// "    Hello     World   "                  =>  "#HelloWorld"
+// ""                                        =>  false
+
+function generateHashtag(str) {
+  if (!str || str === "") {
+    return false;
+  }
+
+  const split = str.split(" ");
+  let capitalised = [];
+
+  for (let i = 0; i < split.length; i++) {
+    if (split[i] !== "") {
+      let caps = split[i][0].toUpperCase() + split[i].slice(1);
+      capitalised.push(caps);
+    }
+  }
+
+  capitalised = "#" + capitalised.join("");
+
+  if (capitalised.length > 140 || capitalised === "#") {
+    return false;
+  }
+  return capitalised;
+}
+
+// console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
+
+// -----------------------------------------
