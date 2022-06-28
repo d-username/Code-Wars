@@ -236,4 +236,23 @@ function getSum(a, b) {
   }
 }
 
-console.log(getSum(-1, 2));
+// console.log(getSum(-1, 2));
+
+// ---------------------------------------
+
+// Shortest Word
+
+function findShort(s) {
+  const words = s.split(" ");
+  let shortest = words[0].length;
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length < shortest) {
+      shortest = words[i].length;
+    }
+  }
+  return shortest;
+}
+
+// console.log(findShort("Let's travel abroad shall we"));
+
+// -------------------------------------
