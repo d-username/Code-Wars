@@ -2,8 +2,8 @@
 
 function spongeMeme(sentence) {
   let isCapitalised = true;
-  const split = sentence.split("");
-  let meme = "";
+  const split = sentence.split('');
+  let meme = '';
 
   for (let i = 0; i < split.length; i++) {
     if (isCapitalised) {
@@ -42,32 +42,32 @@ function getMiddle(s) {
 // Easy wallpaper
 
 numbers = [
-  "zero",
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "ten",
-  "eleven",
-  "twelve",
-  "thirteen",
-  "fourteen",
-  "fifteen",
-  "sixteen",
-  "seventeen",
-  "eighteen",
-  "nineteen",
-  "twenty",
+  'zero',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen',
+  'twenty',
 ];
 
 function wallpaper(l, w, h) {
   if (l === 0 || w === 0 || h === 0) {
-    return "zero";
+    return 'zero';
   } else {
     let roll = 0.52 * 10;
     let room = (l * 2 + w * 2) * h;
@@ -88,12 +88,12 @@ function wallpaper(l, w, h) {
 // Highest and Lowest
 
 function highAndLow(numbers) {
-  const num = numbers.split(" ").map((element) => Number(element));
+  const num = numbers.split(' ').map((element) => Number(element));
 
   let highest = Math.max(...num);
   let lowest = Math.min(...num);
 
-  return highest + " " + lowest;
+  return highest + ' ' + lowest;
 }
 
 //console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
@@ -107,7 +107,7 @@ function maskify(cc) {
     return cc;
   } else {
     let masked =
-      "#".repeat(cc.length - 4) + cc.substring(cc.length - 4, cc.length);
+      '#'.repeat(cc.length - 4) + cc.substring(cc.length - 4, cc.length);
     return masked;
   }
 }
@@ -121,7 +121,7 @@ function maskify(cc) {
 function descendingOrder(n) {
   const numbers = n
     .toString()
-    .split("")
+    .split('')
     .sort(function (a, b) {
       return b - a;
     });
@@ -145,16 +145,16 @@ function descendingOrder(n) {
 // "GTAT" --> "CATA"
 
 function DNAStrand(dna) {
-  const split = dna.split("");
+  const split = dna.split('');
 
   split.forEach((letter, i) => {
-    if (letter === "A") split[i] = "T";
-    if (letter === "T") split[i] = "A";
-    if (letter === "C") split[i] = "G";
-    if (letter === "G") split[i] = "C";
+    if (letter === 'A') split[i] = 'T';
+    if (letter === 'T') split[i] = 'A';
+    if (letter === 'C') split[i] = 'G';
+    if (letter === 'G') split[i] = 'C';
   });
 
-  return split.join("");
+  return split.join('');
 }
 
 // console.log(DNAStrand("GTAT"));
@@ -195,9 +195,9 @@ function isTriangle(a, b, c) {
 // const string3 = "Cwm fjord bank glyphs vext quiz";
 
 function isPangram(string) {
-  const abc = "abcdefghijklmnopqrstuvwxyz";
+  const abc = 'abcdefghijklmnopqrstuvwxyz';
   const lower = string.toLowerCase();
-  const splitString = lower.split("");
+  const splitString = lower.split('');
 
   for (let i = 0; i < abc.length; i++) {
     if (!splitString.includes(abc[i])) {
@@ -243,7 +243,7 @@ function getSum(a, b) {
 // Shortest Word
 
 function findShort(s) {
-  const words = s.split(" ");
+  const words = s.split(' ');
   let shortest = words[0].length;
   for (let i = 1; i < words.length; i++) {
     if (words[i].length < shortest) {
@@ -254,5 +254,18 @@ function findShort(s) {
 }
 
 // console.log(findShort("Let's travel abroad shall we"));
+
+// -------------------------------------
+
+// Simple beads count
+
+function countRedBeads(n) {
+  if (n < 2) {
+    return 0;
+  }
+  return (n - 1) * 2;
+}
+
+// console.log(countRedBeads(5));
 
 // -------------------------------------
