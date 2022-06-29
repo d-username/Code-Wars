@@ -325,6 +325,28 @@ var countBits = function (n) {
   return one;
 };
 
-console.log(countBits(1234));
+// console.log(countBits(1234));
 
 // ---------------------------------
+
+// Find the odd int
+
+// Example:
+// ([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5], 5);
+// ([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5], -1);
+// ([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5], 5);
+// ([10], 10);
+
+function findOdd(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    count = arr.filter((num) => num === arr[i]).length;
+
+    if (count % 2 !== 0) {
+      return arr[i];
+    }
+  }
+}
+
+// console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+
+// --------------------------------------------
