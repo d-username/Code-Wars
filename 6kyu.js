@@ -1,14 +1,14 @@
 // Make A Window
 
 function makeAWindow(num) {
-  let topBottom = "-".repeat(num * 2 + 3);
-  let periods = ".".repeat(num);
-  let middleLine = "-".repeat(num);
-  let middle = "|" + middleLine + "+" + middleLine + "|";
-  let panel = "|" + periods + "|" + periods + "|";
-  let windowCell = ("\n" + panel).repeat(num);
+  let topBottom = '-'.repeat(num * 2 + 3);
+  let periods = '.'.repeat(num);
+  let middleLine = '-'.repeat(num);
+  let middle = '|' + middleLine + '+' + middleLine + '|';
+  let panel = '|' + periods + '|' + periods + '|';
+  let windowCell = ('\n' + panel).repeat(num);
   let window =
-    topBottom + windowCell + "\n" + middle + windowCell + "\n" + topBottom;
+    topBottom + windowCell + '\n' + middle + windowCell + '\n' + topBottom;
 
   return window;
 }
@@ -30,19 +30,19 @@ function makeAWindow(num) {
 // Stop gninnipS My sdroW!
 
 function spinWords(string) {
-  const words = string.split(" ");
+  const words = string.split(' ');
   solution = [];
 
   for (let i = 0; i < words.length; i++) {
     if (words[i].length >= 5) {
-      let reversed = words[i].split("").reverse().join("");
+      let reversed = words[i].split('').reverse().join('');
       solution.push(reversed);
     }
     if (words[i].length < 5) {
       solution.push(words[i]);
     }
   }
-  return solution.join(" ");
+  return solution.join(' ');
 }
 
 // console.log(spinWords("Hey fellow warriors"));
@@ -119,7 +119,7 @@ function getLengthOfMissingArray(arrayOfArrays) {
 
 function likes(names) {
   if (names.length === 0) {
-    return "no one likes this";
+    return 'no one likes this';
   }
   if (names.length === 1) {
     return `${names} likes this`;
@@ -146,15 +146,15 @@ function likes(names) {
 
 function createPhoneNumber(numbers) {
   return (
-    "(" +
+    '(' +
     numbers[0] +
     numbers[1] +
     numbers[2] +
-    ") " +
+    ') ' +
     numbers[3] +
     numbers[4] +
     numbers[5] +
-    "-" +
+    '-' +
     numbers[6] +
     numbers[7] +
     numbers[8] +
@@ -175,8 +175,8 @@ function createPhoneNumber(numbers) {
 
 var uniqueInOrder = function (iterable) {
   let unique = [];
-  if (typeof iterable === "string") {
-    let split = iterable.split("");
+  if (typeof iterable === 'string') {
+    let split = iterable.split('');
     for (let i = 0; i < split.length; i++) {
       if (split[i] !== split[i + 1]) {
         unique.push(split[i]);
@@ -211,26 +211,26 @@ var uniqueInOrder = function (iterable) {
 var countDeafRats = function (town) {
   let piper = false;
   let deaf = 0;
-  let rat = "";
+  let rat = '';
 
   for (let i = 0; i < town.length; i++) {
-    if (town[i] === "P") {
+    if (town[i] === 'P') {
       piper = true;
-      rat = "";
-    } else if (town[i] === " ") {
-      rat = "";
+      rat = '';
+    } else if (town[i] === ' ') {
+      rat = '';
     } else {
       rat += town[i];
     }
 
-    if (piper === false && rat === "O~") {
+    if (piper === false && rat === 'O~') {
       deaf++;
-    } else if (piper === true && rat === "~O") {
+    } else if (piper === true && rat === '~O') {
       deaf++;
     }
 
     if (rat.length === 2) {
-      rat = "";
+      rat = '';
     }
   }
   return deaf;
@@ -253,21 +253,21 @@ deadAntCount = function (ants) {
     return 0;
   }
 
-  let antParts = ants.replace(/ant/g, "");
-  let letters = antParts.split("");
+  let antParts = ants.replace(/ant/g, '');
+  let letters = antParts.split('');
 
   let a = 0;
   let n = 0;
   let t = 0;
 
   letters.forEach((element) => {
-    if (element === "a") {
+    if (element === 'a') {
       a++;
     }
-    if (element === "n") {
+    if (element === 'n') {
       n++;
     }
-    if (element === "t") {
+    if (element === 't') {
       t++;
     }
   });
@@ -282,8 +282,8 @@ deadAntCount = function (ants) {
 // Single Word Pig Latin
 
 function pigLatin(string) {
-  const vowels = "aeiou";
-  const abc = "abcdefghijklmnopqrstuvwxyz";
+  const vowels = 'aeiou';
+  const abc = 'abcdefghijklmnopqrstuvwxyz';
 
   for (let i = 0; i < string.length; i++) {
     if (!abc.includes(string[i].toLowerCase())) {
@@ -292,7 +292,7 @@ function pigLatin(string) {
   }
   for (let i = 0; i < string.length; i++) {
     if (vowels.includes(string[0].toLowerCase())) {
-      return string.toLowerCase() + "way";
+      return string.toLowerCase() + 'way';
     }
   }
   for (let i = 0; i < string.length; i++) {
@@ -300,13 +300,31 @@ function pigLatin(string) {
       return (
         string.substring(i).toLowerCase() +
         string.substring(0, i).toLowerCase() +
-        "ay"
+        'ay'
       );
     }
   }
-  return string.toLowerCase() + "ay";
+  return string.toLowerCase() + 'ay';
 }
 
 // console.log(pigLatin("Spaghetti"));
 
 // -----------------------------------
+
+// Bit Counting
+
+var countBits = function (n) {
+  const binary = n.toString(2);
+  let one = 0;
+
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] === '1') {
+      one++;
+    }
+  }
+  return one;
+};
+
+console.log(countBits(1234));
+
+// ---------------------------------
