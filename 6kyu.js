@@ -350,3 +350,38 @@ function findOdd(arr) {
 // console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
 
 // --------------------------------------------
+
+// Your order, please
+
+// Examples:
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+
+function order(words) {
+  if (!words) {
+    return '';
+  }
+
+  const split = words.split(' ');
+  let index = 1;
+  let solution = [];
+
+  let d = 0;
+  while (d < split.length) {
+    for (let i = 0; i < split.length; i++) {
+      let current = split[i];
+      let number = parseInt(current.replace(/[^0-9.]/g, ''));
+
+      if (number === index) {
+        solution.push(current);
+        index++;
+      }
+    }
+    d++;
+  }
+
+  return solution.join(' ');
+}
+
+// console.log(order('is2 Thi1s T4est 3a'));
