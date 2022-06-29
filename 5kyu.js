@@ -5,18 +5,18 @@
 // pigIt('Hello world !');     // elloHay orldway !
 
 function pigIt(str) {
-  const punctuation = ".?!";
+  const punctuation = '.?!';
   let solution = [];
 
-  str.split(" ").map((element) => {
+  str.split(' ').map((element) => {
     if (!punctuation.includes(element)) {
-      element = element.substring(1) + element.substring(0, 1) + "ay";
+      element = element.substring(1) + element.substring(0, 1) + 'ay';
       solution.push(element);
     } else {
       solution.push(element);
     }
   });
-  return solution.join(" ");
+  return solution.join(' ');
 }
 
 // console.log(pigIt("Hello world !"));
@@ -51,16 +51,16 @@ function rgb(r, g, b) {
     7: 7,
     8: 8,
     9: 9,
-    10: "A",
-    11: "B",
-    12: "C",
-    13: "D",
-    14: "E",
-    15: "F",
+    10: 'A',
+    11: 'B',
+    12: 'C',
+    13: 'D',
+    14: 'E',
+    15: 'F',
   };
 
   let parameters = [r, g, b];
-  let hex = "";
+  let hex = '';
 
   for (let i = 0; i < parameters.length; i++) {
     if (parameters[i] < 0) {
@@ -109,11 +109,11 @@ function humanReadable(seconds) {
   }
 
   return (
-    time.HH.toString().padStart(2, "0") +
-    ":" +
-    time.MM.toString().padStart(2, "0") +
-    ":" +
-    time.SS.toString().padStart(2, "0")
+    time.HH.toString().padStart(2, '0') +
+    ':' +
+    time.MM.toString().padStart(2, '0') +
+    ':' +
+    time.SS.toString().padStart(2, '0')
   );
 }
 
@@ -138,10 +138,10 @@ function validParentheses(parens) {
   let closing = 0;
 
   for (let i = 0; i < parens.length; i++) {
-    if (parens[i] === "(") {
+    if (parens[i] === '(') {
       opening++;
     }
-    if (parens[i] === ")") {
+    if (parens[i] === ')') {
       closing++;
       if (closing > opening) {
         return false;
@@ -168,23 +168,23 @@ function validParentheses(parens) {
 // ""                                        =>  false
 
 function generateHashtag(str) {
-  if (!str || str === "") {
+  if (!str || str === '') {
     return false;
   }
 
-  const split = str.split(" ");
+  const split = str.split(' ');
   let capitalised = [];
 
   for (let i = 0; i < split.length; i++) {
-    if (split[i] !== "") {
+    if (split[i] !== '') {
       let caps = split[i][0].toUpperCase() + split[i].slice(1);
       capitalised.push(caps);
     }
   }
 
-  capitalised = "#" + capitalised.join("");
+  capitalised = '#' + capitalised.join('');
 
-  if (capitalised.length > 140 || capitalised === "#") {
+  if (capitalised.length > 140 || capitalised === '#') {
     return false;
   }
   return capitalised;
@@ -193,3 +193,24 @@ function generateHashtag(str) {
 // console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
 
 // -----------------------------------------
+
+// First non-repeating character
+
+function firstNonRepeatingLetter(s) {
+  const split = s.split('');
+
+  for (let i = 0; i < split.length; i++) {
+    count = split.filter(
+      (letter) => letter.toLowerCase() === split[i].toLowerCase()
+    ).length;
+
+    if (count === 1) {
+      return split[i];
+    }
+  }
+  return '';
+}
+
+// console.log(firstNonRepeatingLetter('mama'));
+
+// --------------------------------------
