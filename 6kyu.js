@@ -385,3 +385,19 @@ function order(words) {
 }
 
 // console.log(order('is2 Thi1s T4est 3a'));
+
+// ------------------------------------
+
+// Array.diff
+
+// Examples:
+// arrayDiff([1,2],[1]) == [2]
+// arrayDiff([1,2,2,2,3],[2]) == [1,3]
+
+function arrayDiff(a, b) {
+  return a.filter((element) => !b.includes(element));
+}
+
+// console.log(arrayDiff([1, 2, 2, 2, 3], [2]));
+
+//------------------------------------------
