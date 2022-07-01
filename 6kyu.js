@@ -428,3 +428,32 @@ function persistence(num) {
 // console.log(persistence(39));
 
 // ----------------------------------
+
+// Counting Duplicates
+
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text) {
+  const split = text.toLowerCase().split('');
+  let repeats = [];
+
+  for (let i = 0; i < split.length; i++) {
+    let count = split.filter((letter) => letter === split[i]).length;
+
+    if (count > 1 && !repeats.includes(split[i])) {
+      repeats.push(split[i]);
+    }
+  }
+  console.log('repeats', repeats, repeats.length);
+}
+
+// console.log(duplicateCount('aabBcde'));
+
+// --------------------------------------
