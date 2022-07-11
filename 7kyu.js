@@ -284,15 +284,11 @@ function countRedBeads(n) {
 const divisions = (n, divisor) => {
   let count = 0;
 
-  if (n === divisor) {
-    return 1;
-  }
-
-  while (n > divisor) {
+  while (n >= divisor) {
     n = Math.floor(n / divisor);
     count++;
   }
   return count;
 };
 
-console.log(divisions(5, 5));
+// console.log(divisions(9999, 3));
