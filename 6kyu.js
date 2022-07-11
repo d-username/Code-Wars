@@ -451,7 +451,7 @@ function duplicateCount(text) {
       repeats.push(split[i]);
     }
   }
-  console.log('repeats', repeats, repeats.length);
+  return repeats.length;
 }
 
 // console.log(duplicateCount('aabBcde'));

@@ -269,3 +269,30 @@ function countRedBeads(n) {
 // console.log(countRedBeads(5));
 
 // -------------------------------------
+
+// Number of Divisions
+
+// Example:
+//100 can be divided by 2 six times:
+// 1. 100 / 2 = 50
+// 2. 50 / 2 = 25
+// 3. 25 / 2 = 12 remainder 1
+// 4. 12 / 2 = 6
+// 5. 6 / 2 = 3
+// 6. 3 / 2 = 1 remainder 1
+
+const divisions = (n, divisor) => {
+  let count = 0;
+
+  if (n === divisor) {
+    return 1;
+  }
+
+  while (n > divisor) {
+    n = Math.floor(n / divisor);
+    count++;
+  }
+  return count;
+};
+
+console.log(divisions(5, 5));

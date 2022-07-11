@@ -214,3 +214,38 @@ function firstNonRepeatingLetter(s) {
 // console.log(firstNonRepeatingLetter('mama'));
 
 // --------------------------------------
+
+// Directions Reduction ********** TO BE DONE ***************
+
+function dirReduc(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log('iteration---', i);
+    if (
+      (arr[i] === 'NORTH' && arr[i + 1] === 'SOUTH') ||
+      (arr[i] === 'SOUTH' && arr[i + 1] === 'NORTH') ||
+      (arr[i] === 'EAST' && arr[i + 1] === 'WEST') ||
+      (arr[i] === 'WEST' && arr[i + 1] === 'EAST')
+    ) {
+      console.log('found pair on idexes--', i, 'and', i + 1);
+
+      arr = arr.splice(i, 2);
+      console.log('new array---', arr);
+    }
+  }
+}
+
+console.log(dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'EAST', 'WEST']));
+
+// doTest(
+// 			["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"],
+// 			["WEST"]
+// 		);
+// 		doTest(
+// 			["NORTH", "WEST", "SOUTH", "EAST"],
+// 			["NORTH", "WEST", "SOUTH", "EAST"]
+// 		);
+// 		doTest(
+// 			["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"],
+// 			[]
+
+********** TO BE DONE ***************
