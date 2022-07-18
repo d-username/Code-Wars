@@ -292,3 +292,17 @@ const divisions = (n, divisor) => {
 };
 
 // console.log(divisions(9999, 3));
+
+// --------------------------------------
+
+// Wealth equality, finally!
+
+function redistributeWealth(wealth) {
+  let totalWealth = wealth.reduce((a, b) => a + b);
+  let evenShare = totalWealth / wealth.length;
+  return wealth.map((num) => (num = evenShare));
+}
+
+console.log(redistributeWealth([5, 10, 6]));
+
+// --------------------------------------
