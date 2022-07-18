@@ -316,3 +316,26 @@ const closestMultiple10 = (num) => {
 // console.log(closestMultiple10(40));
 
 // -----------------------------------
+
+// Race Ceremony
+
+// Examples (input -> output)
+// 11 ->   [4, 5, 2]
+// 6  ->   [2, 3, 1]
+// 10 ->   [4, 5, 1]
+// 7  ->   [2, 4, 1]
+
+function racePodium(blocks) {
+  if (blocks === 7) {
+    return [2, 4, 1];
+  } else {
+    let second = Math.ceil(blocks / 3);
+    let first = second + 1;
+    let third = blocks - second - first;
+    return [second, first, third];
+  }
+}
+
+console.log(racePodium(7));
+
+// --------------------------------------
