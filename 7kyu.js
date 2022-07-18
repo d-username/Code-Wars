@@ -303,6 +303,16 @@ function redistributeWealth(wealth) {
   return wealth.map((num) => (num = evenShare));
 }
 
-console.log(redistributeWealth([5, 10, 6]));
+// console.log(redistributeWealth([5, 10, 6]));
 
 // --------------------------------------
+
+// Return the closest number multiple of 10
+
+const closestMultiple10 = (num) => {
+  return Math.round(num / 10) * 10;
+};
+
+// console.log(closestMultiple10(40));
+
+// -----------------------------------
