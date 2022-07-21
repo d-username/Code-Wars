@@ -336,6 +336,18 @@ function racePodium(blocks) {
   }
 }
 
-console.log(racePodium(7));
+// console.log(racePodium(7));
 
 // --------------------------------------
+
+// Reverse list
+
+function reverseList(arr) {
+  let solution = [];
+  for (var i = arr.length - 1; i >= 0; i--) {
+    solution.push(arr[i]);
+  }
+  return solution;
+}
+
+// console.log(reverseList([1, 2, 3]));
