@@ -351,3 +351,23 @@ function reverseList(arr) {
 }
 
 // console.log(reverseList([1, 2, 3]));
+
+// ----------------------------------------------
+
+// Disemvowel Trolls
+
+function disemvowel(str) {
+  const vowels = 'aeiou';
+
+  let split = str.split('');
+  let noVowels = split.filter(
+    (letter) => !vowels.includes(letter.toLowerCase())
+  );
+  return (solution = noVowels.join(''));
+}
+
+// console.log(
+//   disemvowel("No offense but,\nYour writing is among the worst I've ever read")
+// );
+
+// ------------------------------------------------
