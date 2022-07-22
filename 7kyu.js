@@ -406,15 +406,32 @@ const xMarksTheSpot = (input) => {
   }
 };
 
-console.log(
-  xMarksTheSpot([
-    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-    ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
-    ['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o'],
-    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-    ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
-  ])
-);
+// console.log(
+//   xMarksTheSpot([
+//     ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+//     ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+//     ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
+//     ['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o'],
+//     ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+//     ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
+//   ])
+// );
 
 // -------------------------------------
+
+// Turn the Mars rover to take pictures
+
+function turn(current, target) {
+  if (
+    (current === 'N' && target === 'E') ||
+    (current === 'E' && target === 'S') ||
+    (current === 'S' && target === 'W') ||
+    (current === 'W' && target === 'N')
+  ) {
+    return 'right';
+  }
+  return 'left';
+}
+
+console.log(turn('N', 'E'));
+// ------------------------------------
