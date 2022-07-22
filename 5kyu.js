@@ -258,3 +258,38 @@ function dirReduc(arr) {
 // );
 
 // --------------------------------------------
+
+// Rot13
+
+function rot13(message) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let messageArray = message.split('');
+
+  let codedMessageArray = messageArray.map((letter) => swapLetter(letter));
+
+  function swapLetter(letter) {
+    if (!alphabet.includes(letter.toLowerCase())) {
+      return letter;
+    }
+
+    let indexOfLetter = alphabet.indexOf(letter.toLowerCase());
+    let indexOfNewLetter;
+
+    if (indexOfLetter + 13 < alphabet.length) {
+      indexOfNewLetter = indexOfLetter + 13;
+    } else if (indexOfLetter + 13 >= alphabet.length) {
+      indexOfNewLetter = 13 - (alphabet.length - indexOfLetter);
+    }
+
+    if (letter === letter.toUpperCase()) {
+      return alphabet.charAt(indexOfNewLetter).toUpperCase();
+    } else if (letter !== letter.toUpperCase()) {
+      return alphabet.charAt(indexOfNewLetter).toLowerCase();
+    }
+  }
+  return codedMessageArray.join('');
+}
+
+// console.log(rot13('Ruby is cool!'));
+
+// -------------------------------------------
