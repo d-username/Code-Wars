@@ -379,4 +379,42 @@ function isNegativeZero(n) {
   console.log(split);
 }
 
-console.log(isNegativeZero(-0));
+// console.log(isNegativeZero(-0));
+
+// ------------------------------------
+
+// 'x' marks the spot.
+
+const xMarksTheSpot = (input) => {
+  let rowCoordiantes = [];
+  let columnCoordiantes = [];
+
+  for (let i = 0; i < input.length; i++) {
+    let currentRow = input[i];
+
+    if (currentRow.includes('x') || currentRow.includes('x')) {
+      let currentColumn = currentRow.indexOf('x');
+      rowCoordiantes.push(i);
+      columnCoordiantes.push(currentColumn);
+    }
+  }
+
+  if (rowCoordiantes.concat(columnCoordiantes).length === 2) {
+    return rowCoordiantes.concat(columnCoordiantes);
+  } else {
+    return [];
+  }
+};
+
+console.log(
+  xMarksTheSpot([
+    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+    ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
+    ['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o'],
+    ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+    ['o', 'o', 'o', 'x', 'o', 'o', 'o', 'o'],
+  ])
+);
+
+// -------------------------------------
