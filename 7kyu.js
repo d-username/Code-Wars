@@ -363,7 +363,7 @@ function disemvowel(str) {
   let noVowels = split.filter(
     (letter) => !vowels.includes(letter.toLowerCase())
   );
-  return (solution = noVowels.join(''));
+  return noVowels.join('');
 }
 
 // console.log(
@@ -371,3 +371,12 @@ function disemvowel(str) {
 // );
 
 // ------------------------------------------------
+
+// Is It Negative Zero (-0)?
+
+function isNegativeZero(n) {
+  let split = n.toString();
+  console.log(split);
+}
+
+console.log(isNegativeZero(-0));

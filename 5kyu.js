@@ -215,37 +215,46 @@ function firstNonRepeatingLetter(s) {
 
 // --------------------------------------
 
-// Directions Reduction ********** TO BE DONE ***************
+// Directions Reduction
 
 function dirReduc(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    console.log('iteration---', i);
-    if (
-      (arr[i] === 'NORTH' && arr[i + 1] === 'SOUTH') ||
-      (arr[i] === 'SOUTH' && arr[i + 1] === 'NORTH') ||
-      (arr[i] === 'EAST' && arr[i + 1] === 'WEST') ||
-      (arr[i] === 'WEST' && arr[i + 1] === 'EAST')
-    ) {
-      console.log('found pair on idexes--', i, 'and', i + 1);
+  let doLoop = true;
 
-      arr = arr.splice(i, 2);
-      console.log('new array---', arr);
+  while (doLoop) {
+    loopThrough(arr);
+  }
+
+  function loopThrough(arr) {
+    let changed = false;
+    for (let i = 0; i < arr.length; i++) {
+      let first = arr[i];
+      let second = arr[i + 1];
+      if (compareWithNext(first, second) === true) {
+        arr.splice(i, 2);
+        changed = true;
+      }
+    }
+    if (!changed) {
+      doLoop = false;
     }
   }
+
+  function compareWithNext(first, second) {
+    if (
+      (first === 'NORTH' && second === 'SOUTH') ||
+      (first === 'SOUTH' && second === 'NORTH') ||
+      (first === 'EAST' && second === 'WEST') ||
+      (first === 'WEST' && second === 'EAST')
+    ) {
+      return true;
+    }
+  }
+
+  return arr;
 }
 
-console.log(dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'EAST', 'WEST']));
+// console.log(
+//   dirReduc(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST'])
+// );
 
-// doTest(
-// 			["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"],
-// 			["WEST"]
-// 		);
-// 		doTest(
-// 			["NORTH", "WEST", "SOUTH", "EAST"],
-// 			["NORTH", "WEST", "SOUTH", "EAST"]
-// 		);
-// 		doTest(
-// 			["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"],
-// 			[]
-
-********** TO BE DONE ***************
+// --------------------------------------------
