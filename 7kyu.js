@@ -433,5 +433,41 @@ function turn(current, target) {
   return 'left';
 }
 
-console.log(turn('N', 'E'));
+// console.log(turn('N', 'E'));
+
 // ------------------------------------
+
+// Who is the killer?
+
+function killer(suspectInfo, dead) {
+  const entries = Object.entries(suspectInfo);
+  console.log(entries);
+
+  for (let i = 0; i < entries.length; i++) {
+    let person = entries[i][0];
+    let seen = entries[i][1];
+    console.log(person);
+    console.log(seen);
+
+    if (dead.every((p) => seen.includes(p))) {
+      console.log(person, 'has seen all the dead people');
+    }
+  }
+}
+
+// console.log(
+//   killer(
+//     {
+//       James: ['Jacob', 'Bill', 'Lucas'],
+//       Johnny: ['David', 'Kyle', 'Lucas'],
+//       Peter: ['Lucy', 'Kyle'],
+//     },
+//     ['Lucas', 'Bill']
+//   )
+// );
+//the killer is James
+
+// console.log(killer({ Brad: [], Megan: ['Ben', 'Kevin'], Finn: [] }, ['Ben']));
+//the killer is Megan
+
+// -----------------------------------------
