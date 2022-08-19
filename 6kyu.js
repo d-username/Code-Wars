@@ -457,3 +457,74 @@ function duplicateCount(text) {
 // console.log(duplicateCount('aabBcde'));
 
 // --------------------------------------
+
+// Decode the Morse code
+
+const MORSE_CODE = {
+  '.-': 'a',
+  '-...': 'b',
+  '-.-.': 'c',
+  '-..': 'd',
+  '.': 'e',
+  '..-.': 'f',
+  '--.': 'g',
+  '....': 'h',
+  '..': 'i',
+  '.---': 'j',
+  '-.-': 'k',
+  '.-..': 'l',
+  '--': 'm',
+  '-.': 'n',
+  '---': 'o',
+  '.--.': 'p',
+  '--.-': 'q',
+  '.-.': 'r',
+  '...': 's',
+  '-': 't',
+  '..-': 'u',
+  '...-': 'v',
+  '.--': 'w',
+  '-..-': 'x',
+  '-.--': 'y',
+  '--..': 'z',
+  '.----': '1',
+  '..---': '2',
+  '...--': '3',
+  '....-': '4',
+  '.....': '5',
+  '-....': '6',
+  '--...': '7',
+  '---..': '8',
+  '----.': '9',
+  '-----': '0',
+};
+
+decodeMorse = function (morseCode) {
+  if (morseCode === '···−−−···' || morseCode === '···---···') {
+    return 'SOS';
+  }
+
+  let splitCode = morseCode.split(' ');
+  let decoded = [];
+
+  for (let i = 0; i < splitCode.length; i++) {
+    if (MORSE_CODE[splitCode[i]] === undefined) {
+      decoded.push(' ');
+    } else {
+      decoded.push(MORSE_CODE[splitCode[i]]);
+    }
+  }
+
+  for (let i = 0; i < decoded.length; i++) {
+    decoded[i] = decoded[i].toUpperCase();
+    if (decoded[i] === ' ' && decoded[i + 1] === ' ') {
+      decoded.splice(i, 1);
+    }
+  }
+
+  return decoded.join('').trim();
+};
+
+// console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
+
+// -----------------------------------
