@@ -322,6 +322,32 @@ const incrementString = (string) => {
   return string.replace(/\d+/g, numbersPart);
 };
 
-console.log(incrementString('foo0000999'));
+// console.log(incrementString('foo0000999'));
 
 // -------------------------------------
+
+// Extract the domain name from a URL
+
+// Examples:
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  if (url.includes('www')) {
+    let betweenDots = url.match(/\.(.*?)\./g).toString();
+    let domain = betweenDots.slice(1, -1);
+    return domain;
+  } else if (url.includes('://')) {
+    let betweenColonAndDot = url.match(/\:(.*?)\./g).toString();
+    let domain = betweenColonAndDot.slice(3, -1);
+    return domain;
+  } else {
+    let evertyhingUntilDot = url.match(/[^.]*/).toString();
+    return evertyhingUntilDot;
+  }
+}
+
+// console.log(domainName('7teovdivozmz6vxueus.co.uk'));
+
+// ---------------------------------------------
