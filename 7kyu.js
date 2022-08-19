@@ -451,6 +451,7 @@ function killer(suspectInfo, dead) {
 
     if (dead.every((p) => seen.includes(p))) {
       console.log(person, 'has seen all the dead people');
+      return person;
     }
   }
 }

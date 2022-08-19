@@ -293,3 +293,35 @@ function rot13(message) {
 // console.log(rot13('Ruby is cool!'));
 
 // -------------------------------------------
+
+// String incrementer
+
+// Examples:
+// foo -> foo1
+// foobar23 -> foobar24
+// foo0042 -> foo0043
+// foo9 -> foo10
+// foo099 -> foo100
+
+const incrementString = (string) => {
+  let numbersPart = string.match(/\d+/g);
+
+  if (numbersPart) {
+    numbersPart++;
+  } else {
+    return string + '1';
+  }
+
+  const lengthOfNumbers = string.match(/\d/g).length;
+  const difference = lengthOfNumbers - numbersPart.toString().length;
+
+  for (let i = 0; i < difference; i++) {
+    numbersPart = '0' + numbersPart;
+  }
+
+  return string.replace(/\d+/g, numbersPart);
+};
+
+console.log(incrementString('foo0000999'));
+
+// -------------------------------------
