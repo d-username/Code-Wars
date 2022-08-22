@@ -472,3 +472,34 @@ function killer(suspectInfo, dead) {
 //the killer is Megan
 
 // -----------------------------------------
+
+// Previous multiple of three
+
+// Examples
+// 1      => null
+// 25     => null
+// 36     => 36
+// 1244   => 12
+// 952406 => 9
+
+const prevMultOfThree = (n) => {
+  if (n % 3 === 0) {
+    return n;
+  } else if (n % 3 !== 0 && n.toString().length === 1) {
+    return null;
+  } else {
+    while (n % 3 !== 0) {
+      let string = n.toString();
+      let removedLast = string.slice(0, -1);
+      n = Number(removedLast);
+      if (n % 3 === 0) {
+        return n;
+      }
+      if (removedLast.length === 1 && n % 3 !== 0) {
+        return null;
+      }
+    }
+  }
+};
+
+// console.log(prevMultOfThree(952406));
