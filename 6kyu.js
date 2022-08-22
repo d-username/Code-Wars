@@ -528,3 +528,50 @@ decodeMorse = function (morseCode) {
 // console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 
 // -----------------------------------
+
+// Catalog
+
+// Example answer:
+// "table saw > prx: $1099.99 qty: 5 \n saw > prx: $9 qty: 10"
+
+const s =
+  '<prod><name>drill</name><prx>99</prx><qty>5</qty></prod><prod><name>hammer</name><prx>10</prx><qty>50</qty></prod><prod><name>screwdriver</name><prx>5</prx><qty>51</qty></prod><prod><name>table saw</name><prx>1099.99</prx><qty>5</qty></prod><prod><name>saw</name><prx>9</prx><qty>10</qty></prod>';
+
+function catalog(s, article) {
+  const articlesArray = s.split('</prod>');
+  let solutionArray = [];
+
+  for (let i = 0; i < articlesArray.length; i++) {
+    const oneArticle = articlesArray[i];
+
+    const title = oneArticle.substring(
+      oneArticle.indexOf('<name>') + 6,
+      oneArticle.lastIndexOf('</name>')
+    );
+
+    if (title && title.includes(article)) {
+      const price = oneArticle.substring(
+        oneArticle.indexOf('<prx>') + 5,
+        oneArticle.lastIndexOf('</prx>')
+      );
+
+      const quantity = oneArticle.substring(
+        oneArticle.indexOf('<qty>') + 5,
+        oneArticle.lastIndexOf('</qty>')
+      );
+
+      let line = title + ' > prx: $' + price + ' qty: ' + quantity;
+      solutionArray.push(line);
+    }
+  }
+
+  if (solutionArray.length < 1) {
+    return 'Nothing';
+  } else {
+    return solutionArray.join('\r\n');
+  }
+}
+
+// console.log(catalog(s, 'saw'));
+
+// --------------------------------------------
